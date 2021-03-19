@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>My Blog</title>
+    <link>https://github.com/mikmazey/SeniorProjectBlogs.git</link>
+    <atom:link href="https://github.com/mikmazey/SeniorProjectBlogs.git/index.xml" rel="self" type="application/rss+xml"/>
+    <description>My Blog
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>How To Pick The Right Project</title>
+      <dc:creator>Mikaela Mazey</dc:creator>
+      <link>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/2021-03-18-how-to-pick-the-right-project</link>
+      <description>Choosing a project to stick with can be difficult. Keep reading to follow my process when it comes to staying with a project.</description>
+      <guid>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/2021-03-18-how-to-pick-the-right-project</guid>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How To Sell Yourself As A Data Scientist</title>
+      <dc:creator>Mikaela Mazey</dc:creator>
+      <link>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/2021-03-18-sell-yourself</link>
+      <description>As I have been searching for a job, I have realized just how hard it is for Data Scientists to explain their role. This is because the term Data Scientist is extremely vague.</description>
+      <guid>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/2021-03-18-sell-yourself</guid>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Welcome To My Data Science Blog </title>
+      <dc:creator>Mikaela Mazey</dc:creator>
+      <link>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/welcome</link>
+      <description>This blog will discuss various topics revolving around Data Science.</description>
+      <guid>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/welcome</guid>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
