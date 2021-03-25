@@ -1,0 +1,66 @@
+---
+title: "Insurance Charges in the United States"
+description: |
+  A short description of the post.
+author:
+  - name: Mikaela Mazey
+    url: https://example.com/norajones
+date: 03-25-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+library(readr)
+library(ggplot2)
+library(dplyr)
+
+insurance <- read_csv("~/Documents/seniorproject2.0/insurance.csv")
+View(insurance)
+```
+
+
+
+
+#Male Insurance Charges Vs Female Insurance Charges in USA
+```{r}
+
+charges <- insurance %>% 
+  mutate(Charges = charges/1000)
+  
+charges %>% 
+  ggplot(aes(x=age, y=Charges))+
+  geom_col(fill="darkgrey")+
+  labs(title="Insurance Charges in the USA", x="Age", y="Charges / 1000 (USD)")+
+  theme_bw()+
+  facet_wrap(~sex)
+
+
+```
+
+```{r}
+insurance %>% 
+  ggplot(aes(x=sex, y=charges))+
+  geom_col(aes(color=sex))+
+  theme(legend.position = "none")+
+  labs(title= "Insurance Charges In The United States", x="Gender", y="Insurance Charges (USD)")
+```
+
+```{r}
+
+new_charges <- insurance %>% 
+  mutate(new_charges = charges/1000000)
+new_charges %>% 
+  ggplot(aes(x=region, y=new_charges))+
+  geom_col(fill="bisque3")+
+  labs(title="Insurance Charges for Various Regions in USA", x="Region", y="Insurance Charges/million (USD)")+
+  theme_classic()+
+  facet_wrap(~sex)
+```
+
