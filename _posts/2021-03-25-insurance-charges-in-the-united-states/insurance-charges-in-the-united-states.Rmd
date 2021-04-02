@@ -34,52 +34,59 @@ I created a few visualizations that shows the data in a comprehensive way. I fou
 ```{r}
 
 charges <- insurance %>% 
-  mutate(Charges = charges/1000)
-  
-charges %>% 
-  ggplot(aes(x=age, y=Charges))+
-  geom_col(fill="darkgrey")+
+  mutate(Charges = charges/1000) %>% 
+  group_by(age, sex) %>% 
+  summarise(sum_charges = sum(Charges))
+
+#groupby age and sum up values
+#check to see if it's 18 yr olds or 18 and younger
+#make a line chart. color by sex. or geom point with geom_smooth
+#or boxplot by age
+
+
+p <-charges %>% 
+  ggplot(aes(x=age, y= sum_charges)) + 
+  geom_line(aes(color=sex)) +
   labs(title="Medical Insurance Charges in the USA", x="Age", y="Insurance Charges / 1000 (USD)")+
-  theme_bw()+
-  facet_wrap(~sex)
-
-
+  theme_bw()
+p + scale_color_discrete(name = "Sex", labels = c("Female", "Male"))
 ```
 
 From this visualization, we can see the variation of insurances charges for both genders. We identify that there is a spike for medical insurance charges from the ages 18-20 for both genders. The insurance charges somewhat average out and then get higher at around the age of 45. This makes perfect sense: As people age, their insurance charges increase. I also found the initial spike interesting, but this also makes sense as young adults are more reckless with their actions. 
 
 ```{r}
-new_male_average <-insurance %>% 
-  filter(sex == "male") %>% 
-  mutate(mean = mean(charges))
 
-new_female_average <- insurance %>% 
-  filter(sex == "female") %>% 
-  mutate(mean = mean(charges))
-
-insurance %>% 
+p2 <-insurance %>% 
   ggplot(aes(x=sex, y=charges))+
   geom_boxplot(aes(color=sex))+
   theme(legend.position = "none")+
-  labs(title= "Insurance Charges In The United States", x="Gender", y="Insurance Charges (USD)")
+  labs(title= "Insurance Charges In The United States", x="Gender", y="Insurance Charges (USD)")+
+  theme_bw()
+
+p2 + scale_color_discrete(name = "Sex", labels = c("Female", "Male"))
+
+
+
 ```
-I created this plot to see which gender has the higher medical insurance charges. After I created this boxplot, I realized how close they are in averages. However, males on average, tend to have higher medical insurance bills with an average of approximately 14 000 (USD). Females, on average, have medical insurance bills that are 12 500 (USD).
+I created this plot to see which gender has the higher medical insurance charges. After I created this boxplot, I realized how close they are when comparing the medians. However, we can see that males tend to have higher medical insurance bills when compared to females. 
+
 
 ```{r}
 
 new_charges <- insurance %>% 
-  mutate(new_charges = charges/1000000)
+  mutate(new_charges = charges/1000000) %>% 
+  group_by(region) %>% 
+  summarise(sum_charges = sum(new_charges))
+
 new_charges %>% 
-  ggplot(aes(x=region, y=new_charges))+
+  ggplot(aes(x=region, y=sum_charges))+
   geom_col(fill="bisque3")+
   labs(title="Insurance Charges for Various Regions in USA", x="Region", y="Insurance Charges/million (USD)")+
-  theme_classic()+
-  facet_wrap(~sex)
+  theme_classic()
+
+
 ```
 I then wanted to take a look at the different regions in the United States. I was curious to see if there was a specific region that had higher medical insurance costs. I wanted to compare between males and females and we can see that for both genders, the Southeast region has the highest insurance charges.
 
-```{r}
-#now look at smoker vs non smoker
-#BMI ?
-```
+
 
