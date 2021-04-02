@@ -1,7 +1,6 @@
 ---
 title: "Insurance Charges in the United States"
-description: |
-  A short description of the post.
+
 author:
   - name: Mikaela Mazey
     url: https://example.com/norajones
@@ -22,15 +21,15 @@ library(ggplot2)
 library(dplyr)
 
 insurance <- read_csv("~/Documents/seniorproject2.0/insurance.csv")
-View(insurance)
+
 ```
 
-##Medical Insurance Charges in the United States
+Medical Insurance Charges in the United States
 
 Since I am from Canada, and we pay for our medical bills through taxes, I was curious to analyze the insurance charges in the United States. 
 I created a few visualizations that shows the data in a comprehensive way. I found this dataset in Kaggle and can be found [here](https://www.kaggle.com/mirichoi0218/insurance). The dataset does not give reference to what years the data represents, but I still found the data insightful.
 
-#Male Insurance Charges Vs Female Insurance Charges in USA
+
 ```{r}
 
 charges <- insurance %>% 

@@ -7,6 +7,15 @@
     <description>My Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Insurance Charges in the United States</title>
+      <dc:creator>Mikaela Mazey</dc:creator>
+      <link>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/2021-03-25-insurance-charges-in-the-united-states</link>
+      <description>Insurance Charges in the United States</description>
+      <guid>https://github.com/mikmazey/SeniorProjectBlogs.git/posts/2021-03-25-insurance-charges-in-the-united-states</guid>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/mikmazey/SeniorProjectBlogs.git/posts/2021-03-25-insurance-charges-in-the-united-states/insurance-charges-in-the-united-states_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
   </channel>
 </rss>
