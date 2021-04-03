@@ -20,6 +20,7 @@ library(readr)
 library(ggplot2)
 library(dplyr)
 
+
 insurance <- read_csv("~/Documents/seniorproject2.0/insurance.csv")
 
 ```
@@ -86,6 +87,29 @@ new_charges %>%
 
 ```
 I then wanted to take a look at the different regions in the United States. I was curious to see if there was a specific region that had higher medical insurance costs. I wanted to compare between males and females and we can see that for both genders, the Southeast region has the highest insurance charges.
+
+
+```{r}
+
+
+new_bmi <- insurance %>% 
+  mutate(Charges = charges/1000) %>% 
+  group_by(age, bmi, sex) %>% 
+  summarise(sum_charges = sum(Charges))
+  
+ 
+bmi <- new_bmi %>% 
+  ggplot(aes(x=bmi, y= sum_charges)) + 
+  geom_point(alpha= 1/3, col= "lightsteelblue4") +
+  geom_smooth(col="lightsteelblue2")+
+  labs(title="Medical Insurance Charges in the USA", x="BMI", y="Insurance Charges / 1000 (USD)") +
+  theme_classic()+
+  xlim(20, 45)+
+  ylim(0, 85)+
+  facet_wrap(~sex)
+bmi + scale_color_discrete(name = "Sex", labels = c("Female", "Male"))
+```
+From these plots, we can see that as BMI (Body Mass Index) increases, so do insurance charges. We can also see that males have a steeper slope, showing that they have higher insurance charges based off their BMI.
 
 
 
